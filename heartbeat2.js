@@ -1,10 +1,3 @@
-/*jslint browser: false, node: true, devel: true, todo: false, indent: 2, maxlen: 82 */
-/* jshint bitwise: true, curly: true, eqeqeq: true, es3: false,
-   forin: true, freeze: true, futurehostile: true, latedef: true,
-   maxcomplexity: 8, maxstatements: 35, noarg: true, nocomma: true,
-   noempty: true, nonew: true, singleGroups: true, undef: true, unused: true,
-   plusplus: true, strict: true, browser: true, devel: true
-*/
 'use strict';
 
 /* Exploration to use a sensor object for heartbeat processing.  Works when the
@@ -57,6 +50,7 @@ function heartData(err, val) {
  * board are available as properties of 'this'.
  */
 function boardIsReady() {
+  /* jshint validthis:true */
   var hSensor = new five.Sensor(heartConfig);
   console.log('Sensor:', hSensor);
   hSensor.on('data', heartData);
